@@ -7,70 +7,130 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- 基本重置和页面样式 --- */
+        /* 基础重置和全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Inter', sans-serif; /* 使用更现代的无衬线字体 */
-            line-height: 1.7;
-            background-color: #f4f7f6; /* 柔和的浅灰色背景 */
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8;
+            background-color: #f8f9fa;
             color: #333;
             margin: 0;
-            padding: 40px 20px;
+            padding: 60px 20px;
+            transition: background-color 0.3s ease;
         }
 
-        /* --- 内容容器 --- */
+        /* 内容容器 */
         .container {
-            max-width: 700px; /* 限制内容宽度，提高可读性 */
-            margin: 0 auto; /* 居中 */
-            background-color: #ffffff; /* 白色卡片 */
-            padding: 40px;
-            border-radius: 12px; /* 圆角 */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05); /* 细微的阴影 */
+            max-width: 750px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+            transform: translateY(0);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
-        /* --- 排版样式 --- */
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* 头像区域 */
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #2A9D8F;
+            box-shadow: 0 4px 12px rgba(42, 157, 143, 0.2);
+        }
+
+        /* 排版样式 */
         h1 {
-            font-size: 2.5rem; /* 36px */
+            font-size: 2.8rem;
             font-weight: 700;
             margin-top: 0;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: #1a1a1a;
+            line-height: 1.3;
         }
 
         .subtitle {
-            font-size: 1.15rem; /* 18px */
+            font-size: 1.2rem;
             font-weight: 400;
             color: #555;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
             margin-bottom: 30px;
         }
 
+        .tag {
+            background-color: #f0f7f6;
+            color: #2A9D8F;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .tag:hover {
+            background-color: #2A9D8F;
+            color: #ffffff;
+        }
+
         p {
-            font-size: 1rem; /* 16px */
-            margin-bottom: 20px;
+            font-size: 1.05rem;
+            margin-bottom: 25px;
+            color: #444;
         }
 
         strong {
-            color: #0056b3; /* 用主题色突出显示学校 */
+            color: #2A9D8F;
+            font-weight: 600;
         }
 
-        /* --- 社交链接列表 --- */
+        /* 社交链接区域 */
         .connect-header {
-            font-size: 1.25rem; /* 20px */
+            font-size: 1.3rem;
             font-weight: 600;
-            margin-top: 40px;
-            margin-bottom: 15px;
-            border-top: 1px solid #eee; /* 分隔线 */
-            padding-top: 30px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            border-top: 2px solid #f0f7f6;
+            padding-top: 35px;
+            color: #1a1a1a;
         }
 
         .social-links {
             list-style: none;
             padding-left: 0;
-            display: flex; /* 横向排列 */
-            flex-wrap: wrap; /* 在小屏幕上换行 */
-            gap: 20px; /* 链接之间的间距 */
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
             margin: 0;
         }
 
@@ -81,45 +141,93 @@
         .social-links a {
             text-decoration: none;
             font-weight: 600;
-            color: #007bff; /* 链接蓝色 */
-            font-size: 1rem;
-            transition: color 0.2s ease;
+            color: #2A9D8F;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
         }
 
         .social-links a:hover {
-            color: #004a99; /* 悬停颜色 */
+            color: #1e7d74;
+            border-bottom: 2px solid #2A9D8F;
+            transform: translateX(3px);
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            .profile-header {
+                gap: 20px;
+                justify-content: center;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .social-links {
+                gap: 20px;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
 
     <main class="container">
-        
-        <h1>Hi, I'm Kev.</h1>
-        <p class="subtitle">Welcome to my personal website.</p>
+        <!-- 头像和个人信息头部 -->
+        <div class="profile-header">
+            <img src="https://via.placeholder.com/120" alt="Kev's Profile Photo" class="avatar">
+            <div>
+                <h1>Hi, I'm Kev.</h1>
+                <p class="subtitle">Data Science & AI Enthusiast</p>
+                <div class="tag-container">
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">Data Analysis</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Communication Engineering</span>
+                </div>
+            </div>
+        </div>
 
+        <!-- 教育背景 -->
         <p>
-            I got my bachelor degree in Communication Engineering, <strong>CQUPT</strong> (2021 - 2025).
+            I earned my bachelor's degree in <strong>Communication Engineering</strong> from <strong>CQUPT</strong> (2021 - 2025).
         </p>
         <p>
-             Master of science  in DATA SCIENCE & ARTIFICIAL INTELLIGENCE, <strong>HKUST (GZ)</strong> 
-            
+            Currently pursuing a Master of Science in <strong>DATA SCIENCE & ARTIFICIAL INTELLIGENCE</strong> at <strong>HKUST (GZ)</strong>.
+        </p>
+        <p>
+            Passionate about applying AI and data science to solve real-world problems, with a focus on machine learning models and data-driven decision making.
         </p>
 
+        <!-- 社交链接 -->
         <h3 class="connect-header">Connect with me</h3>
-        
         <ul class="social-links">
             <li>
-                <a href="https://linkedin.com/in/your-username" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://linkedin.com/in/your-username" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                </a>
             </li>
             <li>
-                <a href="http://github.com/H-H902" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="http://github.com/H-H902" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
             </li>
             <li>
-                <a href="hzhu149@connect.hkust-gz.edu.cn">Email</a>
+                <a href="mailto:hzhu149@connect.hkust-gz.edu.cn">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
             </li>
         </ul>
-
     </main>
 
 </body>
