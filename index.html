@@ -1,10 +1,126 @@
-<p>Hello 大家好</p>
-<p>我是Kev，这是我的个人网站。 </p>
-<p>Bachelor degree in communication engineering, CQUPT, Chongqing 2021 - 2025 </p>
-<p>Master of Science in data science & artificial intelligence HKUST-GZ, Guangzhou 2025 - </p>
-<p>很高兴你来到这里, 你可以在以下的网站找到我</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kev's Personal Website</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-<ul>
-  <li> <a href="https://www.zhihu.com/people/AJLoveChina">知乎</a> </li>
-  <li> <a href="http://hejie.nigeerhuo.com"></a> </li>
-</ul>
+    <style>
+        /* --- 基本重置和页面样式 --- */
+        body {
+            font-family: 'Inter', sans-serif; /* 使用更现代的无衬线字体 */
+            line-height: 1.7;
+            background-color: #f4f7f6; /* 柔和的浅灰色背景 */
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        /* --- 内容容器 --- */
+        .container {
+            max-width: 700px; /* 限制内容宽度，提高可读性 */
+            margin: 0 auto; /* 居中 */
+            background-color: #ffffff; /* 白色卡片 */
+            padding: 40px;
+            border-radius: 12px; /* 圆角 */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05); /* 细微的阴影 */
+        }
+
+        /* --- 排版样式 --- */
+        h1 {
+            font-size: 2.5rem; /* 36px */
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .subtitle {
+            font-size: 1.15rem; /* 18px */
+            font-weight: 400;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 1rem; /* 16px */
+            margin-bottom: 20px;
+        }
+
+        strong {
+            color: #0056b3; /* 用主题色突出显示学校 */
+        }
+
+        /* --- 社交链接列表 --- */
+        .connect-header {
+            font-size: 1.25rem; /* 20px */
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            border-top: 1px solid #eee; /* 分隔线 */
+            padding-top: 30px;
+        }
+
+        .social-links {
+            list-style: none;
+            padding-left: 0;
+            display: flex; /* 横向排列 */
+            flex-wrap: wrap; /* 在小屏幕上换行 */
+            gap: 20px; /* 链接之间的间距 */
+            margin: 0;
+        }
+
+        .social-links li {
+            padding: 0;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #007bff; /* 链接蓝色 */
+            font-size: 1rem;
+            transition: color 0.2s ease;
+        }
+
+        .social-links a:hover {
+            color: #004a99; /* 悬停颜色 */
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        
+        <h1>Hi, I'm Kev.</h1>
+        <p class="subtitle">Welcome to my personal website.</p>
+
+        <p>
+            I got my bachelor degree in Communication Engineering, <strong>CQUPT</strong> (2021 - 2025).
+        </p>
+        <p>
+             Master of science  in DATA SCIENCE & ARTIFICIAL INTELLIGENCE, <strong>HKUST (GZ)</strong> 
+            
+        </p>
+
+        <h3 class="connect-header">Connect with me</h3>
+        
+        <ul class="social-links">
+            <li>
+                <a href="https://linkedin.com/in/your-username" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </li>
+            <li>
+                <a href="http://github.com/H-H902" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </li>
+            <li>
+                <a href="hzhu149@connect.hkust-gz.edu.cn">Email</a>
+            </li>
+        </ul>
+
+    </main>
+
+</body>
+</html>
